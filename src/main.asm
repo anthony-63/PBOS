@@ -35,9 +35,9 @@ puts:
 
 .pdone:
 		; restore regs modified
-		pop ax
-		pop si
-		ret
+	pop ax
+	pop si
+	ret
 
 hello_world: db 'Hello world!', 0x0D, 0x0A, 0
 
