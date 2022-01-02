@@ -85,7 +85,7 @@ img:
 
 .PHONY: run
 run:
-	qemu-system-x86_64 -m 512M -cdrom $(ISO) -d int -D logfile.txt -M smm=off
+	qemu-system-x86_64 -m 512M -cdrom $(ISO) -d int -D logfile.txt -M smm=off -no-reboot
 
 rall:
 	make

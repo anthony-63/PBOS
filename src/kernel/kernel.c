@@ -2,8 +2,6 @@
 #include <stddef.h>
 #include <std/stdio.h>
 #include <stivale2.h>
-#include <interrupt/isr.h>
-#include <interrupt/idt.h>
 
 static uint8_t stack[8192];
 
@@ -62,11 +60,6 @@ void _start(struct stivale2_struct* stivale2_struct) {
     printf("Bootloader version: %x\n", stivale2_struct->bootloader_version);
     printf("Framebuffer tag address: %x\n", &framebuffer_hdr_tag);
     printf("Stivale2 header address: %x\n", &stivale2_hdr);
-    printf("TESTING INTERRUPTS...\n");
-    printf("Loading the IDT...\n");
-    isr_install();
-    printf("IDT LOADED\n");
-    
     for(;;) {
         asm("hlt");
     }
